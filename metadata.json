@@ -1,0 +1,38 @@
+{
+  "id": 11728,
+  "title": "Auto-resolve Jira Tickets with GitHub Copilot using Port Context",
+  "slug": "auto-resolve-jira-tickets-with-github-copilot-using-port-context-11728",
+  "description": "AUTO-RESOLVE JIRA TICKETS WITH CODING AGENTSCoding agents can significantly speed up development, but crucial engineeringcontext often gets lost in the process. This guide demonstrates how to use Portas a context lake in n8n workflows to automatically generate GitHub issues fromJira tickets with rich organizational context, ensuring that importantinformation is preserved when assigning them to GitHub Copilot and linking pullrequests back to Jira. This setup helps establish a seamless ticket-to-PRworkflow, bridging the gap between Jira and GitHub while leveraging Port'scomprehensive software catalog as a source of truth.HOW IT WORKSThe n8n workflow orchestrates the following steps: * Jira trigger — The workflow listens for Jira issue updates via webhook. * Condition check — Verifies that the issue status is \"In Progress\" and has the required label (e.g., \"product_approved\") without the \"copilot_assigned\" label. * Port context extraction — Uses Port's n8n node to query your software catalog for relevant context about services, repositories, teams, dependencies, and documentation related to the Jira issue. * Parse response — Retrieves the AI-generated GitHub issue title and body from Port. * Create GitHub issue — Creates a new GitHub issue with the enriched context from Port. * Assign to Copilot — Adds a comment to the GitHub issue instructing Copilot to take ownership. * Add issue link to Jira ticket — Adds a comment to the Jira ticket with the GitHub issue URL, providing clear traceability. * Mark ticket as assigned — Updates the Jira ticket to add the \"copilot_assigned\" label, preventing duplicate processing.SETUP * [ ] Connect your Jira Cloud account and enable issue_updated events * [ ] Register for free on Port.io [https://www.port.io] * [ ] Connect your Port.io [http://Port.io] account and add the API key * [ ] Connect your GitHub account and select the target repository * [ ] Ensure a Copilot bot or @copilot user has access to the repository * [ ] Confirm the workflow webhook or Jira trigger URL is active * [ ] Test by moving a product_approved ticket to In Progress. * [ ] You should be good to go!PREREQUISITES * You have a Port account and have completed the onboarding process. * Port's GitHub app is installed in your account. * Port's Jira integration is installed in your account. * You have a working n8n instance (Cloud or self-hosted) with Port's n8n custom node installed. * Your GitHub organization has GitHub Copilot enabled, so Copilot can be automatically assigned to any issues created through this guide.⚠️ This template is intended for Self-Hosted instances only.",
+  "metadescription": "Automate Jira to GitHub workflows with n8n, Port, and Copilot—preserve rich context, enhance traceability, and speed up development. Learn more!",
+  "summary": "Accelerate development with automated ticket-to-PR workflows that preserve critical engineering context.\n\nListen for Jira issue updates and filter by status and labels to trigger action only when relevant.\n\nEnrich GitHub issues with detailed context from Port’s software catalog, including repositories, teams, dependencies, and documentation.\n\nAutomatically assign coding tasks to GitHub Copilot while linking issues directly back to Jira, ensuring seamless traceability.\n\nPrevent duplicate processing by updating Jira tickets once assigned.\n\nEffortlessly connect and configure Jira, Port, and GitHub to bridge collaboration gaps and streamline your end-to-end development process.",
+  "date": "12 Dec 2025",
+  "createdAtRaw": "2025-12-12T05:12:30.755+00:00",
+  "categories": [
+    "Ticket Management",
+    "AI RAG"
+  ],
+  "nodeTypes": [
+    "CUSTOM.portIo",
+    "n8n-nodes-base.if",
+    "n8n-nodes-base.jira",
+    "n8n-nodes-base.github",
+    "n8n-nodes-base.stickyNote",
+    "n8n-nodes-base.jiraTrigger"
+  ],
+  "author": {
+    "name": "Port IO",
+    "username": "portio",
+    "avatar": "https://gravatar.com/avatar/7faa7cff06291b6b4c0cf6bc1530db7574cc16177860f8a8c8ad41d1a14f67ba?r=pg&d=retro&size=200",
+    "verified": false
+  },
+  "popularity": 72,
+  "visitors": 100,
+  "inserters": 31,
+  "templateUrl": "https://n8n.io/workflows/11728",
+  "readme": "",
+  "thumbnail": "https://supabase.amastuces.com/storage/v1/object/public/worklowscreenshot/11728-auto-resolve-jira-tickets-with-github-copilot-using-port-context.webp",
+  "complexityLevel": "intermediate",
+  "templateData": null,
+  "price": 0,
+  "referalUrl": null
+}
